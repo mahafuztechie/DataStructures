@@ -61,5 +61,11 @@ namespace DataStructures
                 Console.WriteLine("{0} : Nodes inserted in Linked list ", newnode.data);
             }
 
+            //method to append 
+            public void Append(int data)
+            {
+                AddLast(data);
+                Console.WriteLine("{0} node Appended", data);
+            }
     }
 }
