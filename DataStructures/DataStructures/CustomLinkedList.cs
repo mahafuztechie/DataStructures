@@ -183,6 +183,24 @@ namespace DataStructures
             }
             }
 
+        //method to find the size of linked list
+            public void Size()
+            {
+                if (this.head == null)
+                {
+                    Console.WriteLine("Linked list is Empty");
+                    return;
+                }
+                int count = 0;
+                Node temp = this.head;
+                while (temp != null)
+                {
+                    temp = temp.next;
+                    count++;
+                }
+                Console.WriteLine("Size of Linked List:" + count);
+            }
+
 
     }
 }
