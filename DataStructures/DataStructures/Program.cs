@@ -18,3 +18,5 @@ customLinkedList.Append(70);
 customLinkedList.DisplayLinkedList();
 customLinkedList.InsertAtPosition(3, 30);
 customLinkedList.DisplayLinkedList();
+customLinkedList.DeleteFirst();
+customLinkedList.DisplayLinkedList();

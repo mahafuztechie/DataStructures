@@ -103,5 +103,16 @@ namespace DataStructures
 
             }
             }
+
+            public void DeleteFirst()
+            {
+                if (this.head == null)
+                {
+                    Console.WriteLine("list is already empty, there is nothing to delete");
+                }
+                int deleteNode = this.head.data;
+                this.head = this.head.next;
+                Console.WriteLine("node deleted is " +deleteNode);
+            }
     }
 }
