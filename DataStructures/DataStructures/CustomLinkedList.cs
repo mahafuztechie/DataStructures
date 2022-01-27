@@ -11,7 +11,7 @@ namespace DataStructures
        
             public Node head;
             //Method to Add Node in Linked List
-            public void AddNode(int data)
+            public void AddLast(int data)
             {
                 Node newnode = new Node(data);
                 //condition to Check head and add first Node.
@@ -21,23 +21,45 @@ namespace DataStructures
                 }
                 else
                 {
-                    var lastNode = GetLastNode();
-                    lastNode.next = newnode;
+                    //Temp Node to reference to iterate through nodes & not lose or break node
+                    Node temp = head;
+                    //Loop to check next address in Node.
+                    while (temp.next != null)
+                    {
+                        temp = temp.next;
+                    }
+                    temp.next = newnode;
                 }
                 Console.WriteLine("inserted into node: " + newnode.data);
             }
 
-            public Node GetLastNode()
+            //Display Method
+            public void DisplayLinkedList()
             {
-                //Temp Node to reference to iterate through nodes & not lose or break node
+                Console.WriteLine("Display nodes of Linked List");
                 Node temp = head;
-                //Loop to check next address in Node.
-                while (temp.next != null)
+                if (temp == null)
                 {
-                    temp = temp.next;
+                    Console.WriteLine("Linked list is Empty");
+                    return;
                 }
-                return temp;
+                else
+                {
+                    while (temp != null)
+                    {
+                        Console.WriteLine("Nodes are : " + temp.data);
+                        temp = temp.next;
+                    }
+                }
             }
-        
+            //Method to Add Node at First in Linked List
+            public void AddFirst(int data)
+            {
+                Node newnode = new Node(data);
+                newnode.next = head;
+                head = newnode;
+                Console.WriteLine("{0} : Nodes inserted in Linked list ", newnode.data);
+            }
+
     }
 }
