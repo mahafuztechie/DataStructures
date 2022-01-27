@@ -67,5 +67,41 @@ namespace DataStructures
                 AddLast(data);
                 Console.WriteLine("{0} node Appended", data);
             }
+
+        //method to insert at certain position
+            public void InsertAtPosition(int pos, int data)
+            {
+            Node temp;
+            int i;
+            //if position is 1 then insert at start
+            if(pos==1)
+            {
+                 temp = new Node(data);
+                 temp.next = head;
+                 head = temp;
+                 return;
+            }
+            Node p = head;
+            //position may be more than available nodes so loop to traverse on condition if p is null then terminate loop
+            for(i =1; i<pos-1 && p!=null; i++)
+            {
+                p = p.next;
+
+            }
+            //if p is null prompt msg to user
+            if(p == null)
+            {
+                Console.WriteLine("you can insert only upto " +i+ "th position");
+            }
+            //if p is not null then create new node  & pass the data & p pointer to temp pointer & temp to p pointer
+            else
+            {
+                temp = new Node(data);
+                temp.next = p.next;
+                p.next = temp;
+                Console.WriteLine("node inserted at position : " + (i+1));
+
+            }
+            }
     }
 }
