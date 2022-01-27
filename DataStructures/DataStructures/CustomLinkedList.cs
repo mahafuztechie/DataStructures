@@ -104,15 +104,42 @@ namespace DataStructures
             }
             }
 
-            public void DeleteFirst()
+            public int DeleteFirst()
             {
                 if (this.head == null)
                 {
                     Console.WriteLine("list is already empty, there is nothing to delete");
+                return 0;
                 }
                 int deleteNode = this.head.data;
                 this.head = this.head.next;
                 Console.WriteLine("node deleted is " +deleteNode);
+                return deleteNode;
+            }
+
+            //Method to delete Last Node
+            public int DeleteLast()
+            {
+                Node newNode = this.head;
+                if (this.head == null)
+                {
+                Console.WriteLine("list is already empty, there is nothing to delete");
+                return 0;
+                }
+                if (this.head.next == null)
+                {
+                    this.head = null;
+                    return 0;
+                }
+                //checking for tail Node.
+                while (newNode.next.next != null)
+                {
+                    newNode = newNode.next;
+                }
+                int deleteLastNode = newNode.next.data;
+                newNode.next = null;
+                Console.WriteLine("node deleted at Last position is " + deleteLastNode);
+                return deleteLastNode;
             }
     }
 }
