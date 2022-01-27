@@ -25,3 +25,6 @@ customLinkedList.DisplayLinkedList();
 customLinkedList.DeleteLast();
 customLinkedList.DisplayLinkedList();
 customLinkedList.SearchNode(30);
+customLinkedList.InsertAfter(15, 30);
+customLinkedList.DisplayLinkedList();
+
